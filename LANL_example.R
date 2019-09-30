@@ -2,7 +2,7 @@
 setwd("/home/johannes/Documents/CDClogScore/multibin")
 
 # This script requires the repository https://github.com/FluSightNetwork/cdc-flusight-ensemble
-# to be downloaded to the same directory as the multibin repository.
+# (at commit 1120 things work) to be downloaded to the same directory as the multibin repository.
 
 # get some functions
 source("functions_mbls.R")
