@@ -21,16 +21,17 @@ setwd("Forecasts_LANL_1617")
 files_to_copy <- (c(paste0("EW", 40:52, "-2016-LANL_DBMplus.csv"),
                    paste0("EW0", 1:9, "-2017-LANL_DBMplus.csv"),
                    paste0("EW", 10:20, "-2017-LANL_DBMplus.csv")))
-file.copy(files_to_copy,
-          from = "../../cdc-flusight-ensemble/model-forecasts/component-models/LANL_DBMplus",
-          overwrite = FALSE)
+file.copy(to = files_to_copy,
+          from = paste0("../../cdc-flusight-ensemble/model-forecasts/component-models/LANL_DBMplus/",
+                        files_to_copy),
+          overwrite = TRUE)
 setwd("..")
 
 # get the forecasts from the different weeks (get_forecasts is a custom function
 # accessing the different files and shaping things nicely)
 F_1617 <- lapply(tgs,
                  get_forecasts,
-                 path = "../cdc-flusight-ensemble/model-forecasts/component-models/LANL_DBMplus2017",
+                 path = "Forecasts_LANL_1617",
                  season = "2016/2017")
 # pops one warning, can be ignored
 
